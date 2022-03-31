@@ -2,6 +2,8 @@ package com.gmail.bodziowaty6978.cleanarchitecturenoteapp.feature_note.domain.us
 
 data class NoteUseCases(
     val getNotesUseCase: GetNotesUseCase,
-    val deleteNoteUseCase: DeleteNoteUseCase
+    val deleteNoteUseCase: DeleteNoteUseCase,
+    val insertNoteUseCase: InsertNoteUseCase,
+    val getNoteByIdUseCase: GetNoteByIdUseCase
 )
 
