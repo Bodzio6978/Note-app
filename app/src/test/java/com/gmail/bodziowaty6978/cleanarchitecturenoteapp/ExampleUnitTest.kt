@@ -1,4 +1,4 @@
-package com.plcoding.cleanarchitecturenoteapp
+package com.gmail.bodziowaty6978.cleanarchitecturenoteapp
 
 import org.junit.Test
 
