@@ -18,6 +18,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.gmail.bodziowaty6978.cleanarchitecturenoteapp.feature_note.presentation.notes.components.NoteItem
 import com.gmail.bodziowaty6978.cleanarchitecturenoteapp.feature_note.presentation.notes.components.OrderSection
+import com.gmail.bodziowaty6978.cleanarchitecturenoteapp.feature_note.presentation.util.Screen
 import kotlinx.coroutines.launch
 
 @ExperimentalAnimationApi
@@ -34,7 +35,7 @@ fun NotesScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-
+                    navController.navigate(Screen.AddEditNoteScreen.route)
                 },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
@@ -84,7 +85,7 @@ fun NotesScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-
+                                navController.navigate(Screen.AddEditNoteScreen.route + "?noteId=${note.id}&noteColor=${note.color}")
                             },
                         onDelete = {
                             viewModel.onEvent(NotesEvent.DeleteNote(note))
@@ -93,7 +94,7 @@ fun NotesScreen(
                                     message = "Note deleted",
                                     actionLabel = "Undo",
                                 )
-                                if (result == SnackbarResult.ActionPerformed){
+                                if (result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(NotesEvent.RestoreNote)
                                 }
                             }

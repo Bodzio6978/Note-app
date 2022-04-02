@@ -14,16 +14,17 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun DefaultRadioButton(
-    text:String,
-    selected:Boolean,
-    onSelect:() -> Unit,
-    modifier:Modifier = Modifier
+    text: String,
+    selected: Boolean,
+    onSelect: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Row(
         modifier = modifier,
-    verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        RadioButton(selected = selected,
+        RadioButton(
+            selected = selected,
             onClick = onSelect,
             colors = RadioButtonDefaults.colors(
                 selectedColor = MaterialTheme.colors.primary,
