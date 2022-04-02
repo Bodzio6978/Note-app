@@ -74,12 +74,12 @@ class AddEditNoteViewModel @Inject constructor(
             }
 
             is AddEditNoteEvent.EnteredContent -> {
-                _noteContent.value = noteTitle.value.copy(
+                _noteContent.value = noteContent.value.copy(
                     text = event.value
                 )
             }
             is AddEditNoteEvent.ChangeContentFocus -> {
-                _noteContent.value = noteTitle.value.copy(
+                _noteContent.value = noteContent.value.copy(
                     isHintVisible = !event.focusState.isFocused && noteTitle.value.text.isBlank()
                 )
             }
